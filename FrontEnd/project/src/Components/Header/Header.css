@@ -1,0 +1,113 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    gap: 550px;
+    align-items: center; 
+    background-color: #f8f9fa; /* Light background color */
+    padding: 5px; /* Add some padding */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.image-container {
+    position: relative; /* Position relative to allow absolute positioning of the hover text */
+}
+
+.Main_img {
+    height: 170px;
+    width: 250px;
+    border-radius: 10px; /* Rounded corners for the image */
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.Main_img:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+.hover-text {
+    position: absolute; /* Position it absolutely within the container */
+    bottom: 1px; /* Position it above the bottom */
+    left: 50%; /* Center it horizontally */
+    transform: translateX(-100%); /* Adjust for centering */
+    background-color: rgba(0, 0, 0, 0.7); 
+    color:white; /* Text color */
+    padding: 5px 10px 7px 8px; /* Padding around the text */
+    border-radius: 5px; /* Rounded corners for the text box */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s; /* Smooth transition for opacity */
+    font-size: 20px;
+}
+
+.image-container:hover .hover-text {
+    opacity: 1; /* Show text on image hover */
+}
+
+.UL {
+    margin: 0; /* Remove margin for better alignment */
+    display: flex;
+    gap: 50px;
+    list-style: none;
+}
+
+.Header_links {
+    font-size: 25px;
+    text-decoration: none;
+    color: #007bff; /* Bootstrap primary color */
+    position: relative; /* Position for the hover effect */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.Header_links:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+.Header_links::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #007bff; /* Underline color */
+    transition: width 0.3s; /* Smooth width transition */
+    position: absolute;
+    left: 50%;
+    bottom: -5px; /* Position the underline below the text */
+    transform: translateX(-50%); /* Center the underline */
+}
+
+.Header_links:hover::after {
+    width: 100%; /* Expand underline on hover */
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative; /* Position relative to allow absolute positioning of dropdown */
+}
+
+.dropdown-content {
+    display: none; /* Hide dropdown by default */
+    position: absolute; /* Position it absolutely */
+    background-color: white; /* Background color for dropdown */
+    min-width: 160px; /* Minimum width */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1; /* Ensure it appears above other elements */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.dropdown-content a {
+    color: #007bff; /* Link color */
+    padding: 12px 16px; /* Padding for dropdown items */
+    text-decoration: none; 
+    display: block; 
+}
+
+
+

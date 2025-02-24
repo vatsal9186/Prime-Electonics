@@ -1,17 +1,24 @@
+/* Enhanced Header.css */
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #f8f9fa;
-    padding: 10px 20px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #4A90E2, #50C9C3);
+    padding: 15px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.header:hover {
+    background: linear-gradient(135deg, #50C9C3, #4A90E2);
 }
 
 .image-container {
@@ -19,119 +26,116 @@
 }
 
 .Main_img {
-    height: 170px;
-    width: 250px;
-    border-radius: 10px;
-    transition: transform 0.3s;
+    height: 150px;
+    width: 230px;
+    border-radius: 15px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .Main_img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .hover-text {
     position: absolute;
-    bottom: 5px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #f5f5f5;
+    padding: 8px 15px;
+    border-radius: 20px;
     opacity: 0;
-    transition: opacity 0.3s;
-    font-size: 20px;
+    transition: opacity 0.4s;
+    font-size: 22px;
+    font-weight: bold;
 }
 
 .image-container:hover .hover-text {
     opacity: 1;
 }
 
-/* Search Bar Styling */
 .search-container {
     display: flex;
     align-items: center;
     background: white;
-    padding: 5px;
-    border-radius: 25px;
-    margin-left: 10%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    padding: 6px 12px;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .search-bar {
     border: none;
     outline: none;
-    padding: 8px;
-    width: 250px;
+    padding: 10px;
+    width: 300px;
     font-size: 16px;
-    border-radius: 20px;
+    border-radius: 25px;
 }
 
 .search-btn {
-    background: #007bff;
-    color: white;
+    background: #FFC107;
+    color: #f5f5f5;
     border: none;
-    padding: 8px 12px;
-    border-radius: 20px;
+    padding: 10px 15px;
+    border-radius: 25px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
     margin-left: 5px;
+    transition: background 0.3s;
 }
 
 .search-btn:hover {
-    background: #0056b3;
+    background: #FFA000;
 }
 
-/* Navbar Styling */
 .UL {
     display: flex;
-    gap: 40px;
+    gap: 30px;
     list-style: none;
 }
 
 .Header_links {
-    font-size: 20px;
+    font-size: 18px;
     text-decoration: none;
-    color: #007bff;
+    color: #f5f5f5;
     position: relative;
     transition: color 0.3s;
+    padding: 5px 0;
 }
 
 .Header_links:hover {
-    color: #0056b3;
+    color: #FFDD67;
 }
 
 .Header_links::after {
     content: '';
     display: block;
     width: 0;
-    height: 2px;
-    background: #007bff;
-    transition: width 0.3s;
+    height: 3px;
+    background: #FF5722;
+    transition: width 0.4s;
     position: absolute;
     left: 50%;
     bottom: -5px;
     transform: translateX(-50%);
+    border-radius: 5px;
 }
 
 .Header_links:hover::after {
     width: 100%;
 }
 
-/* Dropdown Styles */
-.dropdown {
-    position: relative;
-}
-
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: white;
+    background-color: #2E3B4E;
     min-width: 180px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
     z-index: 1;
-    text-align: left;
 }
 
 .dropdown:hover .dropdown-content {
@@ -139,13 +143,13 @@
 }
 
 .dropdown-content a {
-    color: #007bff;
-    padding: 12px 16px;
+    color: #f5f5f5;
+    padding: 10px 15px;
     text-decoration: none;
     display: block;
     transition: background 0.3s;
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: #3E5060;
 }

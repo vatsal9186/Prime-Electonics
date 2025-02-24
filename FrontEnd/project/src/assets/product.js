@@ -1,5 +1,5 @@
 
-import p1 from './Header.png';
+import p1 from './logo.png';
 
 export const photos = {
     p1: p1,

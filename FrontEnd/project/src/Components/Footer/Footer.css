@@ -1,120 +1,140 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-footer {
-    background-color: #282c34; /* Dark background */
-    color: #ffffff; /* White text */
-    padding: 20px 0; /* Padding for top and bottom */
-    text-align: center; /* Center align text */
-}
-
-.footer {
-    max-width: 1200px; /* Max width for the footer */
-    margin: 0 auto; /* Center the footer */
-    display: flex; /* Flexbox for layout */
-    justify-content: space-between; /* Space between links and info */
-    align-items: center; /* Center items vertically */
-    flex-wrap: wrap; /* Wrap items on smaller screens */
-}
-
-.footer-links {
-    flex: 1; /* Allow links to take available space */
-}
-
-.footer-links ul {
-    list-style: none; /* Remove bullet points */
-    padding: 0; /* Remove padding */
-    margin: 0; /* Remove margin */
-    display: flex; /* Flexbox for horizontal layout */
-}
-
-.footer-links li {
-    margin: 0 15px; /* Space between links */
-    position: relative; /* Position relative for dropdown */
-}
-
-.Footer_links {
-    color: #61dafb; /* Light blue color for links */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold text */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-    font-size: 20px;
-}
-
-.Footer_links:hover {
-    color: hsl(0, 0%, 100%); /* Change color on hover */
-}
-
-.footer-info {
-    flex: 1; /* Allow info to take available space */
-    text-align: right; /* Align text to the right */
-}
-
-.footer-info p {
-    margin: 5px 0; /* Space between paragraphs */
-    font-size: 25px; /* Font size for info */
-}
-
-.dropdown {
-    position: relative; /* Position relative to allow absolute positioning of dropdown */
-}
-
-.dropdown-content {
-    display: none; /* Hide dropdown by default */
-    position: absolute; /* Position it absolutely */
-    background-color: white; /* Background color for dropdown */
-    min-width: 160px; /* Minimum width */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    z-index: 1; /* Ensure it appears above other elements */
-    border-radius: 5px; /* Rounded corners */
-}
-
-.dropdown:hover .dropdown-content {
-    display: block; /* Show dropdown on hover */
-}
-
-.dropdown-content a {
-    color: #007bff; /* Link color */
-    padding: 12px 16px; /* Padding for dropdown items */
-    text-decoration: none; 
-    display: block; 
-}
-
-.social-media {
-    margin-top: 10px; /* Space above social media icons */
-}
-
-.social-media a {
-    color: #61dafb; /* Light blue color for icons */
-    margin: 0 10px; /* Space between icons */
-    font-size: 20px; /* Font size for icons */
-    transition: color 0.3s; /* Smooth transition for hover effect */
-}
-
-.social-media a:hover {
-    color: hsl(0, 0%, 100%); /* Change color on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer {
-        flex-direction: column; /* Stack items vertically on small screens */
-        align-items: center; /* Center items */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  footer {
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 60px 20px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-links {
+    flex: 1;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .footer-links li {
+    position: relative;
+  }
+  
+  .footer-link {
+    color: #6c757d;
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-link:hover {
+    color: #007bff;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .dropdown-content a {
+    color: #6c757d;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .footer-info {
+    flex: 1;
+    text-align: right;
+  }
+  
+  .footer-title {
+    font-size: 32px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .footer-address,
+  .footer-contact {
+    color: #6c757d;
+    margin: 5px 0;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .social-media {
+    margin-top: 20px;
+  }
+  
+  .social-icon {
+    color: #6c757d;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icon:hover {
+    color: #007bff;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #e9ecef;
+    color: #6c757d;
+    margin-top: 20px;
+    border-top: 1px solid #ced4da;
+  }
+  
+  .footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
     }
-
+  
     .footer-info {
-        text-align: center; /* Center text on small screens */
-        margin-top: 10px; /* Space above info */
+      text-align: center;
+      margin-top: 20px;
     }
-
-    .social-media {
-        margin-top: 20px; /* Space above social media icons on small screens */
+  
+    .footer-links ul {
+      justify-content: center;
     }
-
-    .dropdown-menu {
-        min-width: 200px; /* Adjust minimum width for dropdown on small screens */
-    }
-}
+  }
+  

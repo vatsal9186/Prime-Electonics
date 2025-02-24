@@ -1,5 +1,3 @@
-// import all_prod from "../Assets/product";
-
 import { photos } from "../../assets/product";
 import "./Header.css";
 
@@ -10,7 +8,7 @@ function Header() {
         <div className="header">
           <div className="image-container">
             <img src={photos.p1} alt="header image" className="Main_img" />
-            <div className="hover-text">Prime Electronics</div>
+            {/* <div className="hover-text">Prime Electronics</div> */}
           </div>
 
           <div className="search-container">

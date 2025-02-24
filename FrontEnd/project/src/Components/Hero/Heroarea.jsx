@@ -1,69 +1,140 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import './Heroarea.css';
-import React, { useState, useEffect } from 'react';
-import image from './TV.png';
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import image1 from './t_v.png';
+import image2 from './laptop.png';
+import image3 from './AC.png';
+import image4 from './s25.png';
+import image5 from './hp.png';
+import image6 from './iphone16.png';
+import image7 from './Wash.png';
+import image8 from './hp.png';
+import image9 from './a_c.png';
+import image10 from './refri.png';
+
+const products = [
+    {
+        category: 'TV',
+        title: 'LG TV 65 Inch LED 4K Ultra HD Smart TV',
+        price: '₹60000',
+        originalPrice: '₹70000',
+        discount: '-15%',
+        image: image1,
+    },
+    {
+        category: 'Laptop',
+        title: 'Asus VivoBook 15 Core i5 10th Gen - (8 GB/1 TB HDD/Windows 10 Home)',
+        price: '₹50000',
+        originalPrice: '₹60000',
+        image: image2,
+    },
+    {
+        category: 'Air Conditionar',
+        title: 'LG Air Conditionar 1.5 Ton 5 Star Split Dual Inverter AC',
+        price: '₹40000',
+        originalPrice: '₹50000',
+        discount: '-26%',
+        image: image3,
+    },
+    {
+        category: 'Samsung Galaxy S25 Ultra',
+        title: 'Samsung Galaxy S25 Ultra 5G',
+        price: '₹110000',
+        originalPrice: '₹120000',
+        discount: '-3%',
+        image: image4,
+    },
+    {
+        category: 'HP Laptop',
+        title: 'HP laptop i3-10th Gen',
+        price: '₹40000',
+        image: image5,
+    },
+    {
+        category: 'iPhone 16',
+        title: 'iphone 16 pro max 512 GB',
+        price: '₹160000',
+        originalPrice: '₹190000',
+        discount: '-10%',
+        image: image6,
+    },
+    {
+        category: 'Washing Machine',
+        title: 'LG 6.5 kg Inverter Fully-Automatic Top Loading Washing Machine',
+        price: '₹30000',
+        originalPrice: '₹35000',    
+        discount: '-20%',
+        image: image7,
+    },
+    {
+        category: 'Air Conditionar',
+        title: 'Godrej 1 Ton 5 Star, 5-in-l Convertible Cooling, Inverter Split AC',
+        price: '₹35000',
+        originalPrice: '₹40000',
+        discount: '-14%',
+        image: image9,
+    },
+    {
+        category: 'Refrigerator',
+        title: 'Samsung 192 L Direct Cool Single Door 4 Star Refrigerator',
+        price: '₹95000',
+        image: image10,
+    }
+];
+
+// Function to group products in sets of 3
+const groupProducts = (products, itemsPerGroup) => {
+    const grouped = [];
+    for (let i = 0; i < products.length; i += itemsPerGroup) {
+        grouped.push(products.slice(i, i + itemsPerGroup));
+    }
+    return grouped;
+};
 
 const Heroarea = () => {
-            const [currentSlide, setCurrentSlide] = useState(0);
-            const slides = [
-                {
-                img: image,
-                title: 'Welcome to Prime Electronics',
-                text: 'Discover the latest in electronics',
-                },
-                {
-                img: 'image2.jpg',
-                title: 'Big Savings Await',
-                text: 'Shop now and save big on top brands',
-                },
-                {
-                img: 'image3.jpg',
-                title: 'New Arrivals',
-                text: 'Check out our latest products',
-                },
-            ];
-
-            const nextSlide = () => {
-                setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-            };
-
-            const prevSlide = () => {
-                setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-            };
-
-            useEffect(() => {
-                const interval = setInterval(nextSlide, 2000);
-                return () => clearInterval(interval);
-            }, []);
+    const groupedProducts = groupProducts(products, 3); // Change to 3 for displaying three categories
 
     return (
-        <>
-            <section className="hero">
-                    <div className="slider">
-                        {slides.map((slide, index) => (
-                        <div
-                            key={index}
-                            className={`slide ${index === currentSlide ? 'active' : ''}`}
-                        >
-                            <img src={slide.img} alt={`Slide ${index + 1}`} />
-                            <div className="slide-text">
-                            <h1>{slide.title}</h1>
-                            <p>{slide.text}</p>
-                            </div>
+        <div className='trending-products-container'>
+            <h2 className='trending-title'>Trending Products</h2>
+            <Carousel 
+                showThumbs={false} 
+                showStatus={false} 
+                infiniteLoop={true} 
+                autoPlay={true} 
+                interval={5000}
+                showIndicators={true}
+            >
+                {groupedProducts.map((group, index) => (
+                    <div key={index} className='product-group'>
+                        <div className='products-wrapper'>
+                            {group.map((product, idx) => (
+                                <div key={idx} className='product-card'>
+                                    <img src={product.image} alt={product.title} className='product-image' />
+                                    <div className='product-content'>
+                                        <h3 className='product-title'>{product.title}</h3>
+                                        <p className='product-category'>{product.category}</p>
+                                        <div className='price-section'>
+                                            <span className='product-price'>{product.price}</span>
+                                            {product.originalPrice && <span className='original-price'>{product.originalPrice}</span>}
+                                        </div>
+                                        {product.discount && <span className='discount'>{product.discount}</span>}
+                                        <div className="action-buttons">
+                                            <button className="add-to-cart">Add to Cart</button>
+                                            <button className="buy-now">Buy Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
-                        ))}
                     </div>
-                    <button className="prev" onClick={prevSlide}>
-                        &#10094;
-                    </button>
-                    <button className="next" onClick={nextSlide}>
-                        &#10095;
-                    </button>
-            </section>
-        </>
-        );
-    };
-    
+                ))}
+            </Carousel>
+        </div>
+    );
+};
 
 export default Heroarea;

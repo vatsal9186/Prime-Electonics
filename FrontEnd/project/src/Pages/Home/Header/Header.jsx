@@ -1,4 +1,4 @@
-import { photos } from "../../assets/product";
+import { photos } from "../../../assets/product";
 import "./Header.css";
 
 function Header() {

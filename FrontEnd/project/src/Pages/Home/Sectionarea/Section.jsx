@@ -19,7 +19,7 @@ function Section() {
     {
       tag: 'WEEKEND DEAL',
       title: 'The Great Sale',
-      subtitle: 'GIFT CARD $150',
+      subtitle: 'GIFT CARD ₹150',
       bgColor: 'yellow-gradient'
     },
     {

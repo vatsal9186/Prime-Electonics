@@ -1,14 +1,15 @@
-import Banner from "../../Components/Banner/Banner"
-import  Categories  from "../../Components/Categories/Categories"
-import Companies from "../../Components/Companies/Companies"
-import  Footer  from "../../Components/Footer/Footer"
-import Header from "../../Components/Header/Header"
-import Heroarea from "../../Components/Hero/Heroarea"
-import Logo from "../../Components/LOGO/Logo"
-import Offers from "../../Components/Offers/offers"
-import Section from "../../Components/Sectionarea/Section"
+import Banner from "./Banner/Banner"
+import  Categories  from "./Categories/Categories"
+import Companies from "./Companies/Companies"
+import  Footer  from "./Footer/Footer"
+import Header from "./Header/Header"
+import Heroarea from "./Hero/Heroarea"
+import Logo from "./LOGO/Logo"
+import Offers from "./Offers/Offers"
+import Section from "./Sectionarea/Section"
 
 import "./Home.css"
+
 
 
 export const Home = () => {
@@ -22,7 +23,7 @@ export const Home = () => {
             <Companies />
             <Banner />
             <Heroarea />
-            <Offers />
+            <Offers/>
             <Footer />
         </div>
     </>

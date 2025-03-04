@@ -21,6 +21,7 @@
   
   .footer-links {
     flex: 1;
+    /* margin-right: 50px; */
   }
   
   .footer-links ul {

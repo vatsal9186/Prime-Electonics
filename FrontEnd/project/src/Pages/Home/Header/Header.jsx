@@ -1,4 +1,4 @@
-import { photos } from "../../../assets/product";
+import p1 from './logo.png';
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import "./Header.css";
@@ -13,6 +13,7 @@ const productList = [
 ];
 
 function Header() {
+  
   const [query, setQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
 
@@ -44,7 +45,7 @@ function Header() {
       <header>
         <div className="header">
           <div className="image-container">
-            <img src={photos.p1} alt="header" className="Main_img" />
+            <img src={p1} alt="header" className="Main_img" />
           </div>
 
           <div className="search-container">

@@ -1,10 +1,16 @@
+
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React ,{ useEffect, useState } from "react";
 import { FaUser, FaLock, FaEnvelope, FaGoogle, FaFacebook, FaGithub, FaLinkedin, FaYoutube, FaInstagram } from 'react-icons/fa';
 import {Link} from "react-router-dom";
 import './Footer.css';
 
 export const Footer = () => {
+
+
+   const [menu , setMenu] = useState();
+
+
   return (
     <footer>
       <div className="footer-container">
@@ -13,14 +19,15 @@ export const Footer = () => {
             <li><Link to= {'/'} className="footer-link">Home</Link></li>
             <li><Link to= {'/About'} className="footer-link">About</Link></li>
             <li className="dropdown">
-              <a href="#" className="footer-link">Products</a>
+              {/* <a href="#" className="footer-link">Products</a> */}
+              <Link to= "#" className="footer-link">Products</Link>
               <div className="dropdown-content">
-                <a href="#">TV</a>
-                <a href="#">Refrigerator</a>
-                <a href="#">Laptop</a>
-                <a href="#">Mobile</a>
-                <a href="#">AC</a>
-                <a href="#">Washing Machine</a>
+              <li onClick={() => {setMenu("Tv")}}><Link to="/TV">TV</Link></li>
+                  <li onClick={() => {setMenu("Refrigerator")}}><Link to="/Refrigerator">Refrigerator</Link></li>
+                  <li onClick={() => {setMenu("Laptops")}}><Link to="/Laptops">Laptops</Link></li>
+                  <li onClick={() => {setMenu("Mobile")}}><Link to="/Mobile">Mobile</Link></li>
+                  <li onClick={() => {setMenu("Ac")}}><Link to="/AC">AC</Link></li>
+                  <li onClick={() => {setMenu("Washing Machine")}}><Link to="/Wash">Washing Machine</Link></li>
               </div>
             </li>
             <li><a href="#" className="footer-link">Contact Us</a></li>

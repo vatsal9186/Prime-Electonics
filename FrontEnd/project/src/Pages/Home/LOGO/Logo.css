@@ -1,10 +1,12 @@
 .category-container {
+    width: 100vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding: 20px;
     background-color: #f5f5f5;
+    /* width: 100%;   */
   }
   
   .category-card {
@@ -13,7 +15,7 @@
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 150px;
+    width: 170px;
     padding: 20px;
     margin: 10px;
     transition: transform 0.3s, box-shadow 0.3s;

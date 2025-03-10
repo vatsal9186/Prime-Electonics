@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import p1 from './logo.png';
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -13,9 +14,9 @@ const productList = [
 ];
 
 function Header() {
-  
   const [query, setQuery] = useState("");
   const [filteredProducts, setFilteredProducts] = useState([]);
+  const [menu , setMenu] = useState();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,9 +45,10 @@ function Header() {
     <>
       <header>
         <div className="header">
-          <div className="image-container">
-            <img src={p1} alt="header" className="Main_img" />
-          </div>
+        <img src={p1} alt="header" className="Main_img" />
+          {/* <div className="image-container">
+            
+          </div> */}
 
           <div className="search-container">
             <input
@@ -90,16 +92,14 @@ function Header() {
                 </Link>
               </li>
               <li className="dropdown">
-                <a href="#" className="Header_links">
-                  Products
-                </a>
+                <Link to="#" className="Header_links">Products</Link>
                 <div className="dropdown-content">
-                  <Link to="/category/tv">TV</Link>
-                  <Link to="/category/refrigerator">Refrigerator</Link>
-                  <Link to="/category/laptop">Laptop</Link>
-                  <Link to="/category/mobile">Mobile</Link>
-                  <Link to="/category/ac">AC</Link>
-                  <Link to="/category/washing-machine">Washing Machine</Link>
+                  <li onClick={() => {setMenu("Tv")}}><Link to="/TV">TV</Link></li>
+                  <li onClick={() => {setMenu("Refrigerator")}}><Link to="/Refrigerator">Refrigerator</Link></li>
+                  <li onClick={() => {setMenu("Laptops")}}><Link to="/Laptops">Laptops</Link></li>
+                  <li onClick={() => {setMenu("Mobile")}}><Link to="/Mobile">Mobile</Link></li>
+                  <li onClick={() => {setMenu("Ac")}}><Link to="/AC">AC</Link></li>
+                  <li onClick={() => {setMenu("Washing Machine")}}><Link to="/Wash">Washing Machine</Link></li>
                 </div>
               </li>
               <li>
@@ -122,6 +122,7 @@ function Header() {
 }
 
 export default Header;
+
 
 
 
